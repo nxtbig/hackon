@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}Welcome| {% endblock %}
+
+{% block content %}
+<!-- Main component for a primary marketing message or call to action -->
+
+      <div class="jumbotron">
+      	<div class="container">
+	      	<div class="row">
+	      		<div class="col-xs-12">
+			        <h1>Hackon</h1>
+			        <p>explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event explanation of event</p>
+			        <p>
+			        {% if not request.user.is_authenticated %}
+			          <a class="btn btn-lg btn-primary" href="{% url 'registration_register'%}" role="button">Register &raquo;</a>
+			        {% else %}
+			        	<a class="btn btn-lg btn-primary" href="/level/1" role="button">Play &raquo;</a>
+			        </p>
+
+			        {% endif %}
+			       
+		        </div>
+		        </div>
+	      </div>
+      </div>
+
+
+
+<!-- <div class="row">
+	<div class="col-md-3 centered"> -->
+<!-- <div class="container">
+    <div class="col-md-3">
+    	<h2>Newsletter SignUp</h2>
+		<form method="POST" action="">{% csrf_token %}
+
+		{{ form|crispy }}
+
+		<input class="btn btn-primary"  type="submit" value="SignUp"/>
+
+		</form>
+
+	</div>
+</div> -->
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load django_markdown %}
+
+{% block title %}Level - {{ level_object.level_number }} {% endblock %}
+
+{% block content %}
+    <div>
+        <h1 align="center">Level - {{ level_object.level_number }}</h1>
+        <br>
+        <div>
+                <div class="col-xs-12">
+                    <center>
+                    <p>
+                    {{level_object.question|markdown}}<br>
+                    </p></center>
+                   
+                </div>
+            <form method="post"> {% csrf_token %}
+                <div class="form-inline" align="center">
+                  <label>Enter Answer</label>
+                  <input type="text" name="answer" class="form-control"/>
+                    <button type="submit" class="btn btn-primary form-control">Submit</button>
+               </div>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
